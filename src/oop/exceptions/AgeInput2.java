@@ -6,18 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AgeInput2 {
-	private static final String DEFAULT_MESSAGE = "Your age: ";
-	private Scanner scanner;
-
-	public AgeInput2() {
-		scanner = new Scanner(System.in);
-	}
-
-	public int getAge() {
-		return getAge(DEFAULT_MESSAGE);
-	}
-
-	public int getAge(String prompt) {
+	public int getAge(String prompt, Scanner scanner) {
 		int age = 0;
 		boolean keepGoing = true;
 		while (keepGoing) {
@@ -38,12 +27,14 @@ public class AgeInput2 {
 		GregorianCalendar today;
 		int age, thisYear, bornYr;
 		String answer;
+		
 		Scanner scanner = new Scanner(System.in);
 		AgeInput2 input = new AgeInput2();
-		age = input.getAge("How old are you? ");
+		age = input.getAge("How old are you? ", scanner);
 		today = new GregorianCalendar();
 		thisYear = today.get(Calendar.YEAR);
 		bornYr = thisYear - age;
+		
 		System.out.print("Already had your birthday this year? (Y or N)");
 		answer = scanner.next();
 		if (answer.equals("N") || answer.equals("n")) {
