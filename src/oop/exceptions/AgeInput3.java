@@ -6,17 +6,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AgeInput3 {
-//	private static final String DEFAULT_MESSAGE = "Your age: ";
-//	private Scanner scanner;
-//
-//	public AgeInput3() {
-//		scanner = new Scanner(System.in);
-//	}
-//
-//	public int getAge() {
-//		return getAge(DEFAULT_MESSAGE);
-//	}
-
 	public int getAge(String prompt, Scanner scanner) {
 		int age = 0;
 		while (true) {
